@@ -1,7 +1,3 @@
-
----
-
-````markdown
 # Codecell.ai — Pan-Cancer Microbiome Dashboard
 
 This repository contains a Streamlit application for exploring microbiome–immune interactions across cancers.  
@@ -91,9 +87,3 @@ This project is released under the MIT License. You are free to use, modify, and
 ---
 
 © 2025 Codecell.ai — AI-driven cancer research tools.
-
-```
-
----
-
-```
