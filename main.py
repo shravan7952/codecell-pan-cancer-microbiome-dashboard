@@ -80,7 +80,7 @@ st.title("Pan-Cancer Microbiome & Immune Dashboard")
 st.markdown("Explore microbiome abundances, immune features, clinical survival and ML in one place. Use the sidebar to control filters and visuals.")
 
 # -------------------------
-# Load data (TEMP disabled for Streamlit Cloud test)
+# Load data
 # -------------------------
 @st.cache_data
 def load_data(path="merged_data_counts.csv"):
@@ -88,16 +88,12 @@ def load_data(path="merged_data_counts.csv"):
         raise FileNotFoundError(f"{path} not found.")
     return pd.read_csv(path, index_col=0, low_memory=False)
 
-# TEMP: comment out actual loading
-# try:
-#     df = load_data()
-# except Exception as e:
-#     st.error(f"Could not load data: {e}")
-#     st.stop()
+try:
+    df = load_data()
+except Exception as e:
+    st.error(f"Could not load data: {e}")
+    st.stop()
 
-# Fake df to let app boot
-df = pd.DataFrame({"_primary_disease": ["TestCancer"], "OS.time": [100]})
-st.write("✅ App started without real dataset (testing mode)")
 # -------------------------
 # Utilities
 # -------------------------
@@ -871,7 +867,7 @@ with tabs[9]:
 # -------------------------
 st.markdown("---")
 st.caption(
-    "### Data Sources\n"
+    "###Data Sources\n"
     "- **Knight Lab Pan-Cancer Mycobiome dataset**: Narunsky-Haziza et al., Cell 2022. "
     "[DOI: 10.1016/j.cell.2022.09.005](https://doi.org/10.1016/j.cell.2022.09.005)\n"
     "- **TCGA Pan-Cancer Atlas**: Data downloaded via the UCSC Xena Browser "
