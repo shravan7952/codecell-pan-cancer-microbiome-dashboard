@@ -867,7 +867,7 @@ with tabs[9]:
 # -------------------------
 st.markdown("---")
 st.caption(
-    "###Data Sources\n"
+    "Data Sources\n"
     "- **Knight Lab Pan-Cancer Mycobiome dataset**: Narunsky-Haziza et al., Cell 2022. "
     "[DOI: 10.1016/j.cell.2022.09.005](https://doi.org/10.1016/j.cell.2022.09.005)\n"
     "- **TCGA Pan-Cancer Atlas**: Data downloaded via the UCSC Xena Browser "
