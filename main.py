@@ -80,7 +80,7 @@ st.title("Pan-Cancer Microbiome & Immune Dashboard")
 st.markdown("Explore microbiome abundances, immune features, clinical survival and ML in one place. Use the sidebar to control filters and visuals.")
 
 # -------------------------
-# Load data
+# Load data (TEMP disabled for Streamlit Cloud test)
 # -------------------------
 @st.cache_data
 def load_data(path="merged_data_counts.csv"):
@@ -88,12 +88,16 @@ def load_data(path="merged_data_counts.csv"):
         raise FileNotFoundError(f"{path} not found.")
     return pd.read_csv(path, index_col=0, low_memory=False)
 
-try:
-    df = load_data()
-except Exception as e:
-    st.error(f"Could not load data: {e}")
-    st.stop()
+# TEMP: comment out actual loading
+# try:
+#     df = load_data()
+# except Exception as e:
+#     st.error(f"Could not load data: {e}")
+#     st.stop()
 
+# Fake df to let app boot
+df = pd.DataFrame({"_primary_disease": ["TestCancer"], "OS.time": [100]})
+st.write("✅ App started without real dataset (testing mode)")
 # -------------------------
 # Utilities
 # -------------------------
